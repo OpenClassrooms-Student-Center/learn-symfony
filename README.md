@@ -1,7 +1,8 @@
-Symfony Demo Application
-========================
+Zozor's Blog
+============
 
-The "Symfony Demo Application" is a reference application created to show how
+The Zozor's Blog is an application used a learning support for the Symfony 4 course available in OpenClassRooms platform.
+The entire application is based on the []Symfony Demo Application](https://github.com/symfony/demo), which is a reference application created to show how
 to develop Symfony applications following the recommended best practices.
 
 Requirements
@@ -17,7 +18,7 @@ Installation
 Execute this command to install the project:
 
 ```bash
-$ composer create-project symfony/symfony-demo
+$ composer create-project mickaelandrieu/learn-symfony
 ```
 
 Usage
@@ -28,7 +29,7 @@ command to run the built-in web server and access the application in your
 browser at <http://localhost:8000>:
 
 ```bash
-$ cd symfony-demo/
+$ cd learn-symfony/
 $ php bin/console server:run
 ```
 
