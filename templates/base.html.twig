@@ -47,13 +47,11 @@
                                         </a>
                                     </li>
 
-                                    {% if is_granted('ROLE_ADMIN') %}
-                                        <li>
-                                            <a href="{{ path('admin_post_index') }}">
-                                                <i class="fa fa-lock" aria-hidden="true"></i> {{ 'menu.admin'|trans }}
-                                            </a>
-                                        </li>
-                                    {% endif %}
+                                    <li>
+                                        <a href="{{ path('admin_post_index') }}">
+                                            <i class="fa fa-lock" aria-hidden="true"></i> {{ 'menu.admin'|trans }}
+                                        </a>
+                                    </li>
                                 {% endblock %}
 
                                 <li>
@@ -101,18 +99,18 @@
                 <div class="container">
                     <div class="row">
                         <div id="footer-copyright" class="col-md-6">
-                            <p>&copy; {{ 'now'|date('Y') }} - The Symfony Project</p>
+                            <p>&copy; {{ 'now'|date('Y') }} - Le blog de Zozor</p>
                             <p>{{ 'mit_license'|trans }}</p>
                         </div>
                         <div id="footer-resources" class="col-md-6">
                             <p>
-                                <a href="https://twitter.com/symfony" title="Symfony Twitter">
+                                <a href="https://twitter.com/OpenClassrooms" title="OpenClassRooms Twitter">
                                     <i class="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.facebook.com/SensioLabs" title="SensioLabs Facebook">
+                                <a href="https://www.facebook.com/openclassrooms" title="OpenClassRooms Facebook">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://symfony.com/blog/" title="Symfony Blog">
+                                <a href="http://blog.openclassrooms.com" title="OpenClassRooms Blog">
                                     <i class="fa fa-rss" aria-hidden="true"></i>
                                 </a>
                             </p>

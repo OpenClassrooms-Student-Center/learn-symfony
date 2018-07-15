@@ -20,9 +20,9 @@ class BlogControllerTest extends WebTestCase
     public function testIndex()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/en/');
+        $crawler = $client->request('GET', '/');
 
-        $this->assertCount(
+        self::assertCount(
             Post::NUM_ITEMS,
             $crawler->filter('article.post'),
             'The homepage displays the right number of posts.'
@@ -32,14 +32,14 @@ class BlogControllerTest extends WebTestCase
     public function testRss()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/en/rss.xml');
+        $crawler = $client->request('GET', '/rss.xml');
 
-        $this->assertSame(
+        self::assertSame(
             'text/xml; charset=UTF-8',
             $client->getResponse()->headers->get('Content-Type')
         );
 
-        $this->assertCount(
+        self::assertCount(
             Post::NUM_ITEMS,
             $crawler->filter('item'),
             'The xml file displays the right number of posts.'
@@ -61,7 +61,7 @@ class BlogControllerTest extends WebTestCase
         $client->followRedirects();
 
         // Find first blog post
-        $crawler = $client->request('GET', '/en/');
+        $crawler = $client->request('GET', '/');
         $postLink = $crawler->filter('article.post > h2 a')->link();
 
         $crawler = $client->click($postLink);
@@ -73,19 +73,19 @@ class BlogControllerTest extends WebTestCase
 
         $newComment = $crawler->filter('.post-comment')->first()->filter('div > p')->text();
 
-        $this->assertSame('Hi, Symfony!', $newComment);
+        self::assertSame('Hi, Symfony!', $newComment);
     }
 
     public function testAjaxSearch()
     {
         $client = static::createClient();
-        $client->xmlHttpRequest('GET', '/en/search', ['q' => 'lorem']);
+        $client->xmlHttpRequest('GET', '/search', ['q' => 'lorem']);
 
         $results = json_decode($client->getResponse()->getContent(), true);
 
-        $this->assertSame('application/json', $client->getResponse()->headers->get('Content-Type'));
-        $this->assertCount(1, $results);
-        $this->assertSame('Lorem ipsum dolor sit amet consectetur adipiscing elit', $results[0]['title']);
-        $this->assertSame('Jane Doe', $results[0]['author']);
+        self::assertSame('application/json', $client->getResponse()->headers->get('Content-Type'));
+        self::assertCount(1, $results);
+        self::assertSame('Lorem ipsum dolor sit amet consectetur adipiscing elit', $results[0]['title']);
+        self::assertSame('Jane Doe', $results[0]['author']);
     }
 }
