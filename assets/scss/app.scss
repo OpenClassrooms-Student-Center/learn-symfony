@@ -3,11 +3,11 @@
 // see https://github.com/thomaspark/bootswatch/issues/55#issuecomment-298093182
 $web-font-path: 'data:text/css;base64,';
 
-@import "~bootswatch/flatly/variables";
+@import "~bootswatch/journal/variables";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 @import "~bootswatch/flatly/bootswatch";
 @import "~font-awesome/scss/font-awesome.scss";
-@import "~highlight.js/styles/solarized-light.css";
+@import "~highlight.js/styles/tomorrow.css";
 
 // pick the Lato fonts individually to avoid importing the entire font family
 @import '~lato-font/scss/public-api';
