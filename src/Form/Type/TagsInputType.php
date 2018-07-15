@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Form\Type;
 
 use App\Form\DataTransformer\TagArrayToStringTransformer;
@@ -25,8 +16,6 @@ use Symfony\Component\Form\FormView;
  * Bootstrap-tagsinput javascript plugin.
  *
  * See https://symfony.com/doc/current/cookbook/form/create_custom_field_type.html
- *
- * @author Yonel Ceruto <yonelceruto@gmail.com>
  */
 class TagsInputType extends AbstractType
 {

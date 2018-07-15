@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Controller;
 
 use App\Entity\Comment;
@@ -29,9 +20,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Controller used to manage blog contents in the public part of the site.
- *
- * @author Ryan Weaver <weaverryan@gmail.com>
- * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  */
 class BlogController extends AbstractController
 {

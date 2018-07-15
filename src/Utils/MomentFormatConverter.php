@@ -1,20 +1,9 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Utils;
 
 /**
  * This class is used to convert PHP date format to moment.js format.
- *
- * @author Yonel Ceruto <yonelceruto@gmail.com>
  */
 class MomentFormatConverter
 {

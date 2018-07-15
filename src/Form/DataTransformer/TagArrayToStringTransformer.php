@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Form\DataTransformer;
 
 use App\Entity\Tag;
@@ -20,9 +11,6 @@ use Symfony\Component\Form\DataTransformerInterface;
  * that can be displayed and managed by Bootstrap-tagsinput js plugin (and back on submit).
  *
  * See https://symfony.com/doc/current/form/data_transformers.html
- *
- * @author Yonel Ceruto <yonelceruto@gmail.com>
- * @author Jonathan Boyer <contact@grafikart.fr>
  */
 class TagArrayToStringTransformer implements DataTransformerInterface
 {
