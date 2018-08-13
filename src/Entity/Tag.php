@@ -6,11 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * @ORM\Table(name="symfony_demo_tag")
+ * @ORM\Table(name="zozor_tag")
  *
  * Defines the properties of the Tag entity to represent the post tags.
- *
- * See https://symfony.com/doc/current/book/doctrine.html#creating-an-entity-class
  */
 class Tag implements \JsonSerializable
 {
