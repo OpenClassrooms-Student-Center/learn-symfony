@@ -1,4 +1,4 @@
-FROM php:7.2-fpm-alpine
+FROM php:fpm-alpine
 
 # Install Symfony requirements
 RUN \
@@ -18,6 +18,12 @@ RUN \
         pdo_pgsql \
         zip && \
     apk del .build-deps
+
+RUN mkdir -p \
+    var/data \
+    var/cache \
+    var/logs \
+    var/sessions
 
 # Install Composer globally
 ENV COMPOSER_ALLOW_SUPERUSER 1

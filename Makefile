@@ -73,8 +73,7 @@ reset: ## Reset the database used by the specified environment
 		php bin/console doctrine:database:drop --force && \
 		php bin/console doctrine:database:create && \
 		php bin/console doctrine:schema:create --no-interaction && \
-		php bin/console doctrine:fixtures:load --no-interaction && \
-		chown -R www-data var/data"
+		php bin/console doctrine:fixtures:load --no-interaction"
 
 yarn: ## Install Yarn dependencies from the "php" container"
 	$(PHP_SERVICE) "yarn install"
