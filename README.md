@@ -42,7 +42,7 @@ Tests
 Execute this command to run tests:
 
 ```bash
-$ cd symfony-demo/
+$ cd learn-symfony/
 $ ./vendor/bin/simple-phpunit
 ```
 
