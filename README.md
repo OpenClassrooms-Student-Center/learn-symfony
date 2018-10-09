@@ -1,7 +1,7 @@
 Zozor's Blog
 ============
 
-The Zozor's Blog is an application used a learning support for the Symfony 4 course available in OpenClassRooms platform.
+The Zozor's Blog is an application used a learning support for the Symfony 4 course available in OpenClassrooms platform.
 The entire application is based on the [Symfony Demo Application](https://github.com/symfony/demo), which is a reference application created to show how
 to develop Symfony applications following the recommended best practices.
 
