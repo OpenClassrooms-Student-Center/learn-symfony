@@ -1,0 +1,62 @@
+# This file describes an application. You can have multiple applications
+# in the same project.
+
+# The name of this app. Must be unique within a project.
+name: learn-symfony
+
+# The type of the application to build.
+type: php:7.2
+build:
+  flavor: composer
+
+variables:
+  env:
+    # Tell Symfony to always install in production-mode.
+    APP_ENV: 'prod'
+    APP_DEBUG: 0
+
+# Yarn is needed to build frontend assets
+dependencies:
+  nodejs:
+    yarn: "*"
+
+# The hooks that will be performed when the package is deployed.
+hooks:
+  build: |
+    set -e
+    yarn install
+    yarn run encore production
+    php bin/console doctrine:database:drop --force
+    php bin/console doctrine:database:create
+    php bin/console doctrine:schema:create --no-interaction
+    php bin/console doctrine:fixtures:load --no-interaction
+    bin/console cache:clear
+  deploy: |
+    set -e
+    bin/console cache:clear
+    php bin/console --env=prod doctrine:migrations:migrate --no-interaction
+  # The relationships of the application with services or other applications.
+# The left-hand side is the name of the relationship as it will be exposed
+# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
+# side is in the form `<service name>:<endpoint name>`.
+relationships:
+  database: "mysqldb:mysql"
+
+# The size of the persistent disk of the application (in MB).
+disk: 1024
+
+# The mounts that will be performed when the package is deployed.
+mounts:
+  "/var/cache": "shared:files/cache"
+  "/var/log": "shared:files/log"
+  "/var/sessions": "shared:files/sessions"
+  "/var/data": "shared:files/data"
+
+# The configuration of app when it is exposed to the web.
+web:
+  locations:
+    "/":
+      # The public directory of the app, relative to its root.
+      root: "public"
+      # The front-controller script to send non-static requests to.
+      passthru: "/index.php"
