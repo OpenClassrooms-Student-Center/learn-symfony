@@ -1,4 +1,6 @@
 {
+    "name": "mickaelandrieu/learn-symfony",
+    "description": "A blog project using Symfony 4, for teaching purposes",
     "license": "proprietary",
     "type": "project",
     "require": {
