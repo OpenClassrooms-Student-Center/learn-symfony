@@ -1,4 +1,6 @@
 {
+    "name": "mickaelandrieu/learn-symfony",
+    "description": "A blog project using Symfony 4, for teaching purposes",
     "license": "proprietary",
     "type": "project",
     "require": {
@@ -37,6 +39,7 @@
         "symfony/dotenv": "^4.1",
         "symfony/phpunit-bridge": "^4.1",
         "symfony/stopwatch": "^4.1",
+        "symfony/test-pack": "^1.0",
         "symfony/web-profiler-bundle": "^4.1",
         "symfony/web-server-bundle": "^4.1"
     },
