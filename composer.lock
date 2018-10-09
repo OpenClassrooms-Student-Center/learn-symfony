@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9589a75d27265cbb986c82ca79415ab6",
+    "content-hash": "aaa3d7511f620244a93d0121d8b1dbcb",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1690,6 +1690,47 @@
                 "paging"
             ],
             "time": "2018-05-17T09:23:52+00:00"
+        },
+        {
+            "name": "platformsh/symfonyflex-bridge",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/platformsh/symfonyflex-bridge.git",
+                "reference": "df28ed1ebad8db70d3afb6bb8148df08665b7599"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/platformsh/symfonyflex-bridge/zipball/df28ed1ebad8db70d3afb6bb8148df08665b7599",
+                "reference": "df28ed1ebad8db70d3afb6bb8148df08665b7599",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "platformsh-flex-env.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Larry Garfield",
+                    "email": "larry@platform.sh"
+                }
+            ],
+            "description": "Bridge library for running Symfony Flex on Platform.sh",
+            "time": "2018-09-13T20:28:44+00:00"
         },
         {
             "name": "psr/cache",

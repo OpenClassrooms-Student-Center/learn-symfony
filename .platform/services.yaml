@@ -1,3 +1,3 @@
 mysqldb:
   type: mysql:10.2
-  disk: 512
+  disk: 2048

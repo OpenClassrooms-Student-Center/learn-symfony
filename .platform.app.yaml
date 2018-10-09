@@ -12,7 +12,7 @@ build:
 variables:
   env:
     # Tell Symfony to always install in production-mode.
-    APP_ENV: 'prod'
+    APP_ENV: 'platform'
     APP_DEBUG: 0
 
 # Yarn is needed to build frontend assets
@@ -26,15 +26,14 @@ hooks:
     set -e
     yarn install
     yarn run encore production
-    php bin/console doctrine:database:drop --force
-    php bin/console doctrine:database:create
-    php bin/console doctrine:schema:create --no-interaction
-    php bin/console doctrine:fixtures:load --no-interaction
     bin/console cache:clear
   deploy: |
     set -e
     bin/console cache:clear
-    php bin/console --env=prod doctrine:migrations:migrate --no-interaction
+    php bin/console doctrine:database:drop --force
+    php bin/console doctrine:database:create
+    php bin/console doctrine:schema:create --no-interaction
+    php bin/console doctrine:fixtures:load --no-interaction
   # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
