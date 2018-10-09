@@ -2,7 +2,6 @@
 
 namespace App\Tests\Controller;
 
-use App\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**

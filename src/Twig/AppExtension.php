@@ -3,10 +3,8 @@
 namespace App\Twig;
 
 use App\Utils\Markdown;
-use Symfony\Component\Intl\Intl;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
-use Twig\TwigFunction;
 
 /**
  * This Twig extension adds a new 'md2html' filter to easily transform Markdown
