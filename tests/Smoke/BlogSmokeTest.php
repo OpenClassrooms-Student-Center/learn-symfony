@@ -6,7 +6,7 @@ use App\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Le Smoke testing permet de rapidement identifier si on
+ * Le Smoke testing permet d'identifier si on
  * a cassé quelque chose d'essentiel en production.
  *
  *     $ cd your-symfony-project/
@@ -17,13 +17,7 @@ class BlogSmokeTest extends WebTestCase
     public function testHomePageIsAvailable()
     {
         $client = static::createClient();
-
         $crawler = $client->request('GET', '/');
-
-        self::assertTrue($client->getResponse()->isSuccessful());
-        self::assertSame(
-            $crawler->filter('title')->text(),
-            'Le blog de Zozor!'
-        );
+        self::assertSame('Le blog de Zozor!', $crawler->filter('title')->text());
     }
 }

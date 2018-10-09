@@ -7,6 +7,7 @@ RUN \
         icu-libs \
         postgresql-libs \
         yarn \
+        unzip \
         zlib-dev && \
     apk add --no-cache --virtual .build-deps \
         $PHPIZE_DEPS \
