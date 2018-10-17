@@ -78,7 +78,7 @@
         "version": "v2.5.12"
     },
     "doctrine/persistence": {
-        "version": "v1.0.0"
+        "version": "v1.0.1"
     },
     "doctrine/reflection": {
         "version": "v1.0.0"
