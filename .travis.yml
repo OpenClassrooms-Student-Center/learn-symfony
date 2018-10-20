@@ -1,5 +1,6 @@
 language: php
 sudo: false
+dist: trusty
 
 cache:
   directories:
@@ -16,12 +17,11 @@ matrix:
     - php: 7.1
     - php: 7.2
     - php: 7.3
-    - php: nightly
   allow_failures:
-    - php: nightly
+    - php: 7.3
 
 before_install:
-  - '[[ "$TRAVIS_PHP_VERSION" == "nightly" ]] || phpenv config-rm xdebug.ini'
+  - '[[ "$TRAVIS_PHP_VERSION" == "7.3" ]] || phpenv config-rm xdebug.ini'
   - composer self-update
 
 install:
