@@ -8,6 +8,7 @@ RUN \
         postgresql-libs \
         yarn \
         unzip \
+
         zlib-dev && \
     apk add --no-cache --virtual .build-deps \
         $PHPIZE_DEPS \
@@ -19,6 +20,15 @@ RUN \
         pdo_pgsql \
         zip && \
     apk del .build-deps
+
+
+# Install APCU
+RUN docker-php-source extract \
+    && apk add --no-cache --virtual .phpize-deps-configure $PHPIZE_DEPS \
+    && pecl install apcu \
+    && docker-php-ext-enable apcu \
+    && apk del .phpize-deps-configure \
+    && docker-php-source delete
 
 RUN mkdir -p \
     var/data \
