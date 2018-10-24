@@ -5,6 +5,7 @@ namespace App\Tests\Form\DataTransformer;
 use App\Entity\Tag;
 use App\Form\DataTransformer\TagArrayToStringTransformer;
 use App\Repository\TagRepository;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -98,6 +99,9 @@ class TagArrayToStringTransformerTest extends TestCase
      */
     private function getMockedTransformer(array $findByReturnValues = []): TagArrayToStringTransformer
     {
+        /**
+         * @var MockObject
+         */
         $tagRepository = $this->getMockBuilder(TagRepository::class)
             ->disableOriginalConstructor()
             ->getMock();

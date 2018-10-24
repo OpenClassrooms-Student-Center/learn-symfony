@@ -103,13 +103,16 @@ phpcsfixer-apply: ## Run the PHP coding standards fixer on apply mode
 	$(PHP_SERVICE) "php vendor/bin/php-cs-fixer fix --config=.php_cs \
 		--cache-file=var/cache/.php_cs --verbose"
 
+phpstan: ## Run the PHP static analysis tool at level 4
+	$(PHP_SERVICE) "php ./vendor/bin/phpstan analyse -c phpstan.neon -l 4 src"
+
 phpunit: ## Run the tests suit (unit & functional)
 	$(PHP_SERVICE) "php ./vendor/bin/simple-phpunit"
 
 security: ## Run a security analysis on dependencies
 	$(PHP_SERVICE) "php bin/console security:check"
 
-.PHONY: check lint phpcsfixer phpcsfixer-apply phpunit security
+.PHONY: check lint phpcsfixer phpcsfixer-apply phpunit security phpstan
 
 .DEFAULT_GOAL := help
 help:
