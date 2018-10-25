@@ -89,6 +89,9 @@ class BlogControllerTest extends WebTestCase
 
         self::assertSame(Response::HTTP_FOUND, $client->getResponse()->getStatusCode());
 
+        /**
+         * @var Post
+         */
         $post = $client->getContainer()->get('doctrine')->getRepository(Post::class)->findOneBy([
             'title' => $postTitle,
         ]);

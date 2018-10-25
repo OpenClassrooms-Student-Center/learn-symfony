@@ -8,7 +8,9 @@ use App\Repository\PostRepository;
 use App\Utils\Slugger;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\ClickableInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -56,7 +58,10 @@ class BlogController extends AbstractController
         $post = new Post();
         $post->setAuthor($this->getUser());
 
-        // See https://symfony.com/doc/current/book/forms.html#submitting-forms-with-multiple-buttons
+        /** See https://symfony.com/doc/current/book/forms.html#submitting-forms-with-multiple-buttons
+         *
+         * @var Form
+         */
         $form = $this->createForm(PostType::class, $post)
             ->add('saveAndCreateNew', SubmitType::class);
 
@@ -67,7 +72,9 @@ class BlogController extends AbstractController
         // However, we explicitly add it to improve code readability.
         // See https://symfony.com/doc/current/best_practices/forms.html#handling-form-submits
         if ($form->isSubmitted() && $form->isValid()) {
-            $post->setSlug(Slugger::slugify($post->getTitle()));
+            if (null !== $post->getTitle()) {
+                $post->setSlug(Slugger::slugify($post->getTitle()));
+            }
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
@@ -79,7 +86,12 @@ class BlogController extends AbstractController
             // See https://symfony.com/doc/current/book/controller.html#flash-messages
             $this->addFlash('success', 'post.created_successfully');
 
-            if ($form->get('saveAndCreateNew')->isClicked()) {
+            /**
+             * @var ClickableInterface
+             */
+            $saveAndCreateNewType = $form->get('saveAndCreateNew');
+
+            if ($saveAndCreateNewType->isClicked()) {
                 return $this->redirectToRoute('admin_post_new');
             }
 
@@ -120,7 +132,9 @@ class BlogController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $post->setSlug(Slugger::slugify($post->getTitle()));
+            if (null !== $post->getTitle()) {
+                $post->setSlug(Slugger::slugify($post->getTitle()));
+            }
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'post.updated_successfully');
