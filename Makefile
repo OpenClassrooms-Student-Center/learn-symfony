@@ -1,6 +1,7 @@
 DOCKER          = docker
 DOCKER_COMPOSE  = docker-compose
 PHP_SERVICE     = $(DOCKER_COMPOSE) exec php sh -c
+CONSOLE         = $(DOCKER_COMPOSE) exec php bin/console
 
 ##
 ## ----------------------------------------------------------------------------
@@ -50,6 +51,8 @@ uninstall: ## Uninstall the environment
 ## ----------------------------------------------------------------------------
 ##
 
+console: ## Access Symfony Console
+	$(CONSOLE) $(filter-out $@,$(MAKECMDGOALS))
 composer: ## Install Composer dependencies from the "php" container
 	$(PHP_SERVICE) "composer install --optimize-autoloader"
 
@@ -78,7 +81,7 @@ reset: ## Reset the database used by the specified environment
 yarn: ## Install Yarn dependencies from the "php" container"
 	$(PHP_SERVICE) "yarn install"
 
-.PHONY: composer encore-dev encore-prod encore-watch nginx php reset yarn
+.PHONY: console composer encore-dev encore-prod encore-watch nginx php reset yarn
 
 ##
 ## ----------------------------------------------------------------------------
