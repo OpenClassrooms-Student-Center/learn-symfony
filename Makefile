@@ -53,6 +53,7 @@ uninstall: ## Uninstall the environment
 
 console: ## Access Symfony Console
 	$(CONSOLE) $(filter-out $@,$(MAKECMDGOALS))
+
 composer: ## Install Composer dependencies from the "php" container
 	$(PHP_SERVICE) "composer install --optimize-autoloader"
 
