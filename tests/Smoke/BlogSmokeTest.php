@@ -5,8 +5,8 @@ namespace App\Tests\Smoke;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Le Smoke testing permet d'identifier si on
- * a cassé quelque chose d'essentiel en production.
+ * Smoke testing is used to quickly identify bugs
+ * in most important features of your application.
  *
  *     $ cd your-symfony-project/
  *     $ ./vendor/bin/simple-phpunit
