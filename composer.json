@@ -1,7 +1,7 @@
 {
     "name": "mickaelandrieu/learn-symfony",
     "description": "A blog project using Symfony 4, for teaching purposes",
-    "license": "proprietary",
+    "license": "MIT",
     "type": "project",
     "require": {
         "php": "^7.1.3",
