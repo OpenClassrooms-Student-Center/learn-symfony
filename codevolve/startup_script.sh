@@ -7,3 +7,6 @@ then
     rm /etc/apache2/sites-enabled/000-default.conf
     sudo service apache2 restart
 fi
+
+touch /root/.bashrcs/setBashDirectory.sh
+printf '#!bin/bash\ncd /var/www/html' >> /root/.bashrcs/setBashDirectory.sh
