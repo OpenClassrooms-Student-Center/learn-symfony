@@ -215,6 +215,9 @@
             "ref": "5ec5bb098bc693cd92f03390dd488ea0847cfcc7"
         }
     },
+    "symfony/contracts": {
+        "version": "v1.0.2"
+    },
     "symfony/css-selector": {
         "version": "v3.4.0-beta2"
     },
@@ -353,9 +356,6 @@
             "ref": "5b2f0ee78c90d671860ac6450e37dec10fbc0719"
         }
     },
-    "symfony/security": {
-        "version": "v3.4.0-beta2"
-    },
     "symfony/security-bundle": {
         "version": "3.3",
         "recipe": {
@@ -364,6 +364,18 @@
             "version": "3.3",
             "ref": "85834af1496735f28d831489d12ab1921a875e0d"
         }
+    },
+    "symfony/security-core": {
+        "version": "v4.2.3"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.2.3"
+    },
+    "symfony/security-guard": {
+        "version": "v4.2.3"
+    },
+    "symfony/security-http": {
+        "version": "v4.2.3"
     },
     "symfony/stopwatch": {
         "version": "v3.4.0-beta2"
@@ -406,6 +418,9 @@
     },
     "symfony/var-dumper": {
         "version": "v3.4.0-beta2"
+    },
+    "symfony/var-exporter": {
+        "version": "v4.2.3"
     },
     "symfony/web-profiler-bundle": {
         "version": "3.3",
