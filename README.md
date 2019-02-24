@@ -18,7 +18,7 @@ Installation
 Execute this command to install the project:
 
 ```bash
-$ composer create-project mickaelandrieu/learn-symfony
+$ composer create-project openclassrooms/learn-symfony
 ```
 
 Usage
