@@ -20,3 +20,11 @@ services:
       - .:/var/www/html:rw,cached
       - ./docker/php/conf.d/custom.ini:/usr/local/etc/php/conf.d/custom.ini:ro
     tty: true
+
+  blackfire:
+    image: blackfire/blackfire
+    env_file: .env
+    environment:
+        # Exposes the host BLACKFIRE_SERVER_ID and TOKEN environment variables.
+        - BLACKFIRE_SERVER_ID
+        - BLACKFIRE_SERVER_TOKEN
