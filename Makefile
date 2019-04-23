@@ -62,6 +62,12 @@ encore-prod: ## Compile assets once with Encore/Webpack and minify & optimize th
 encore-watch: ## Compile assets automatically with Encore/Webpack when files change
 	$(PHP_SERVICE) "yarn run encore dev --watch"
 
+blackfire: ## Executes blackfire
+	$(DOCKER_COMPOSE) exec php blackfire $(filter-out $@,$(MAKECMDGOALS))
+
+blackfire-curl: ## Curl an URL using Blackfire (like make blackfire-curl /contact)
+	$(DOCKER_COMPOSE) exec php blackfire curl nginx$(filter-out $@,$(MAKECMDGOALS))
+
 nginx: ## Open a terminal in the "nginx" container
 	$(DOCKER_COMPOSE) exec nginx sh
 

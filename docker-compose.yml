@@ -6,6 +6,7 @@ services:
     env_file: .env
     depends_on:
       - php
+      - blackfire
     ports:
       - 8000:80
     volumes:
@@ -28,3 +29,5 @@ services:
         # Exposes the host BLACKFIRE_SERVER_ID and TOKEN environment variables.
         - BLACKFIRE_SERVER_ID
         - BLACKFIRE_SERVER_TOKEN
+        - BLACKFIRE_CLIENT_ID
+        - BLACKFIRE_CLIENT_TOKEN

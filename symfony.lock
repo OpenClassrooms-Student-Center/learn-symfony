@@ -179,6 +179,9 @@
             "ref": "5ec5bb098bc693cd92f03390dd488ea0847cfcc7"
         }
     },
+    "symfony/contracts": {
+        "version": "v1.0.2"
+    },
     "symfony/css-selector": {
         "version": "v3.4.0-beta2"
     },
@@ -278,8 +281,14 @@
     "symfony/polyfill-ctype": {
         "version": "v1.8.0"
     },
+    "symfony/polyfill-iconv": {
+        "version": "v1.11.0"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.6.0"
+    },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.11.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
@@ -316,6 +325,18 @@
             "version": "3.3",
             "ref": "85834af1496735f28d831489d12ab1921a875e0d"
         }
+    },
+    "symfony/security-core": {
+        "version": "v4.2.7"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.2.7"
+    },
+    "symfony/security-guard": {
+        "version": "v4.2.7"
+    },
+    "symfony/security-http": {
+        "version": "v4.2.7"
     },
     "symfony/stopwatch": {
         "version": "v3.4.0-beta2"
@@ -355,6 +376,9 @@
     },
     "symfony/var-dumper": {
         "version": "v3.4.0-beta2"
+    },
+    "symfony/var-exporter": {
+        "version": "v4.2.7"
     },
     "symfony/web-profiler-bundle": {
         "version": "3.3",
