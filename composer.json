@@ -10,7 +10,7 @@
         "erusev/parsedown": "^1.6",
         "ezyang/htmlpurifier": "^4.9",
         "sensio/framework-extra-bundle": "^5.0",
-        "sensiolabs/security-checker": "^4.2",
+        "sensiolabs/security-checker": "^5.0",
         "symfony/asset": "^4.2",
         "symfony/expression-language": "^4.2",
         "symfony/flex": "^1.0",

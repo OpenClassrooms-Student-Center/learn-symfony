@@ -18,7 +18,7 @@ Installation
 Execute this command to install the project:
 
 ```bash
-$ composer create-project mickaelandrieu/learn-symfony
+$ git clone https://github.com/OpenClassrooms-Student-Center/learn-symfony.git
 ```
 
 Usage
@@ -42,7 +42,7 @@ Tests
 Execute this command to run tests:
 
 ```bash
-$ cd symfony-demo/
+$ cd learn-symfony/
 $ ./vendor/bin/simple-phpunit
 ```
 
