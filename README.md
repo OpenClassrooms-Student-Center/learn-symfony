@@ -19,6 +19,9 @@ Execute this command to install the project:
 
 ```bash
 $ git clone https://github.com/OpenClassrooms-Student-Center/learn-symfony.git
+$ cd learn-symfony
+$ php bin/console do:sc:up --force
+$ php bin/console do:fi:lo
 ```
 
 Usage
