@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@symfony/webpack-encore": "^0.20.0",
+    "@symfony/webpack-encore": "^4.2.0",
     "bloodhound-js": "^1.2.1",
     "bootstrap-sass": "^3.3.7",
     "bootstrap-tagsinput": "^0.7.1",
@@ -8,11 +8,11 @@
     "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "font-awesome": "^4.7.0",
     "highlight.js": "^10.4.1",
-    "imports-loader": "^0.7.1",
+    "imports-loader": "^4.0.1",
     "jquery": "^3.2.1",
     "lato-font": "^3.0.0",
     "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.5",
+    "sass-loader": "^13.2.0",
     "typeahead.js": "^0.11.1"
   },
   "scripts": {
